@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+    <mat-label>Cargos</mat-label>
+    <mat-select [(ngModel)]="selectedValue" name="cargo" (selectionChange)="sendSelectCargo()">
+      <mat-option *ngFor="let cargo of cargos" [value]="cargo">
+        {{cargo.nombre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
