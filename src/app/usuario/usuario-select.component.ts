@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { Usuario } from "./usuario.component";
 import { UsuarioService } from './usuario.service';
 
@@ -10,7 +10,9 @@ export class UsuarioSelectComponent implements OnInit{
 
   usuarios: any
 
-  selectedValue: Usuario = new Usuario("",0,new Date());
+  selectedValue: Usuario = new Usuario("",0);
+
+  @Output() messageEvent = new EventEmitter<Usuario>();
 
   constructor(public usuarioService: UsuarioService){}
 
@@ -21,5 +23,10 @@ export class UsuarioSelectComponent implements OnInit{
              err => console.error(err), 
              () => console.log('getUsuarios completed') 
         );
+  }
+
+  sendSelectUsuario() {
+    console.log(this.selectedValue);
+    this.messageEvent.emit(this.selectedValue);
   }
 }

@@ -30,7 +30,7 @@ export class UsuarioComponent implements OnInit{
 
     cargo: Cargo = new Cargo("","",0);
 
-    usuarioSelect: Usuario = new Usuario("",0,new Date());
+    usuarioSelect: Usuario = new Usuario("",0);
 
     datos:any;
 
@@ -94,7 +94,7 @@ export class UsuarioComponent implements OnInit{
                         err => console.error(err), 
                         () => console.log('crear Usuario completed')
                 );
-            this.usuarioSelect = new Usuario("", 0, new Date());
+            this.usuarioSelect = new Usuario("", 0);
         }
     }
 
@@ -113,7 +113,7 @@ export class UsuarioComponent implements OnInit{
                     err => console.error(err), 
                     () => console.log('modificacion Usuario completed')
             );
-        this.usuarioSelect = new Usuario("", 0, new Date());
+        this.usuarioSelect = new Usuario("", 0);
     }
 
     actualizarDatos(){
@@ -127,6 +127,6 @@ export class UsuarioComponent implements OnInit{
 }
 
 export class Usuario {
-    constructor(public nombre: string, public edad: number, public fechaIngreso: Date, public cargo?: Cargo, public id?: number) {
+    constructor(public nombre: string, public edad: number, public fechaIngreso?: Date, public cargo?: Cargo, public id?: number) {
     }
 }

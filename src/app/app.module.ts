@@ -25,7 +25,7 @@ const rutas: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cargos', component: CargoComponent },
   { path: 'usuarios', component: UsuarioComponent },
-  { path: 'mercancia', component: MercanciaComponent }
+  { path: 'mercancias', component: MercanciaComponent }
 ];
 
 @NgModule({
